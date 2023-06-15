@@ -11,12 +11,9 @@ export const HeaderStyle = styled.header`
   > div {
     display: flex;
     align-items: center;
-    font-size: 16px;
-    /* font-weight: bold; */
-    color: white;
-    font-family: "Gill Sans", sans-serif;
     div {
       margin: 0 12px;
+      cursor: pointer;
     }
   }
 `;
@@ -29,6 +26,8 @@ export const LogoTesla = styled.svg`
 `;
 
 export const HomeStyle = styled.div`
+  position: relative;
+
   > div:nth-of-type(1) {
     display: flex;
     justify-content: center;
@@ -37,5 +36,40 @@ export const HomeStyle = styled.div`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+  }
+
+  > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 16vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    > div:nth-of-type(1) {
+      font-size: 44px;
+      margin-bottom: 6px;
+    }
+  }
+  > div:nth-of-type(3) {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 88vh;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    height: 40px;
+    border: 3px solid white;
+    border-radius: 4px;
+    padding: 3px 110px;
+    cursor: pointer;
+    transition: 2s cubic-bezier(1, 0, 1, 0);
+
+    :hover {
+      background-color: white;
+      color: black;
+    }
   }
 `;
