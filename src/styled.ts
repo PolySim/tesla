@@ -12,8 +12,25 @@ export const HeaderStyle = styled.header`
     display: flex;
     align-items: center;
     div {
+      z-index: 10;
       margin: 0 12px;
       cursor: pointer;
+    }
+  }
+  > div:last-child {
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    background-color: green;
+    /* background-color: #757575; */
+    border-radius: 4px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+  }
+  :hover {
+    > div:last-child {
+      opacity: 0.3;
     }
   }
 `;

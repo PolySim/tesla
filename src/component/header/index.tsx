@@ -1,25 +1,27 @@
-import React from "react";
-import {HeaderStyle} from "src/styled";
+import React, { useState } from "react";
+import { HeaderStyle } from "src/styled";
 import Tesla from "./logo";
+import HoverHeader from "src/function/hoverHeader";
+import ListModel from "./listModel";
 
 export default function Header(): JSX.Element {
-    return (
-        <HeaderStyle>
-            <Tesla/>
-            <div>
-                <div>Model S</div>
-                <div>Model 3</div>
-                <div>Model X</div>
-                <div>Model Y</div>
-                <div>Powerwall</div>
-                <div>Recharge</div>
-            </div>
-            <div>
-                <div>Assistance</div>
-                <div>Shop</div>
-                <div>Compte</div>
-                <div>Menu</div>
-            </div>
-        </HeaderStyle>
-    );
+  const [indexHover, setIndexHover] = useState<number>(0);
+  const [firstPositionX, setFirstPositionX] = useState<number>(0);
+
+  return (
+    <HeaderStyle>
+      <Tesla />
+      <ListModel
+        setIndexHover={setIndexHover}
+        setFirstPositionX={setFirstPositionX}
+      />
+      <div>
+        <div>Assistance</div>
+        <div>Shop</div>
+        <div>Compte</div>
+        <div>Menu</div>
+      </div>
+      <HoverHeader index={indexHover} firstPositionX={firstPositionX} />
+    </HeaderStyle>
+  );
 }
