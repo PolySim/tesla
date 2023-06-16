@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 export default function SecondList({
   setIndexHover,
@@ -9,5 +9,33 @@ export default function SecondList({
 }): JSX.Element {
   const names: string[] = ["Assistance", "Shop", "Compte", "Menu"];
 
-  return <></>;
+  const assistance = useRef<HTMLDivElement>(null);
+
+  return (
+    <div>
+      {names.map((name, i) =>
+        i === 0 ? (
+          <div
+            ref={assistance}
+            key={i}
+            onMouseEnter={() => {
+              setIndexHover((curr) => i + 6);
+              setFirstPositionX((curr) => assistance.current?.offsetLeft || 0);
+            }}
+          >
+            {name}
+          </div>
+        ) : (
+          <div
+            key={i}
+            onMouseEnter={() => {
+              setIndexHover((curr) => i + 6);
+            }}
+          >
+            {name}
+          </div>
+        )
+      )}
+    </div>
+  );
 }

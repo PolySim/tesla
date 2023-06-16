@@ -3,6 +3,7 @@ import { HeaderStyle } from "src/styled";
 import Tesla from "./logo";
 import HoverHeader from "src/function/hoverHeader";
 import ListModel from "./listModel";
+import SecondList from "./secondList";
 
 export default function Header(): JSX.Element {
   const [indexHover, setIndexHover] = useState<number>(0);
@@ -15,12 +16,10 @@ export default function Header(): JSX.Element {
         setIndexHover={setIndexHover}
         setFirstPositionX={setFirstPositionX}
       />
-      <div>
-        <div>Assistance</div>
-        <div>Shop</div>
-        <div>Compte</div>
-        <div>Menu</div>
-      </div>
+      <SecondList
+        setIndexHover={setIndexHover}
+        setFirstPositionX={setFirstPositionX}
+      />
       <HoverHeader index={indexHover} firstPositionX={firstPositionX} />
     </HeaderStyle>
   );

@@ -27,7 +27,6 @@ export default function ListModel({
       firstPositionX();
     }
     window.addEventListener("resize", firstPositionX);
-    return window.removeEventListener("resize", firstPositionX);
   }, []);
 
   return (
