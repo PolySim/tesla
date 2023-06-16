@@ -21,8 +21,7 @@ export const HeaderStyle = styled.header`
     position: absolute;
     top: 16px;
     left: 0px;
-    background-color: green;
-    /* background-color: #757575; */
+    background-color: #757575;
     border-radius: 4px;
     height: 24px;
     transition: all 0.3s ease-in-out;
@@ -88,5 +87,89 @@ export const HomeStyle = styled.div`
       background-color: white;
       color: black;
     }
+  }
+`;
+
+export const CarsStyle = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #171a20;
+
+  > div:nth-of-type(1) {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 16vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    > div:nth-of-type(1) {
+      font-size: 44px;
+    }
+
+    > div:nth-of-type(2) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    > div:nth-of-type(2)::after {
+      content: "";
+      width: 100%;
+      background-color: #171a20;
+      height: 3px;
+      transform: scaleY(33%);
+      transition: 0.3s ease-in-out;
+      border-radius: 4px;
+    }
+
+    > div:nth-of-type(2):hover::after {
+      transform: scaleY(75%);
+    }
+  }
+  > div:nth-of-type(3) {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 89.5vh;
+    transform: translateX(-50%);
+
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 264px;
+      height: 40px;
+      border-radius: 4px;
+    }
+
+    > div:nth-of-type(1) {
+      background-color: #393c41;
+      color: white;
+      margin-right: 24px;
+    }
+    > div:nth-of-type(2) {
+      background-color: rgba(244, 244, 244, 0.65);
+      color: #393c41;
+    }
+  }
+  > div:nth-of-type(4) {
+    position: absolute;
+    top: 95vh;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
