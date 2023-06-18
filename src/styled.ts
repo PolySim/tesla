@@ -235,7 +235,7 @@ export const SolarStyle = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 89.5vh;
+    top: 88vh;
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.3s ease-in-out;
@@ -244,5 +244,30 @@ export const SolarStyle = styled.div`
     border-radius: 4px;
     background-color: rgba(23, 26, 32, 0.8);
     color: white;
+  }
+`;
+
+export const FooterStyle = styled.div`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 95vh;
+  left: 0;
+  width: 100%;
+  color: #393c41;
+  font-size: 12px;
+
+  > div:nth-of-type(1) {
+    padding-left: 24px;
+  }
+  > div:nth-of-type(2) {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    > div {
+      margin-right: 12px;
+    }
   }
 `;
