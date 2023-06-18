@@ -197,3 +197,52 @@ export const CarsTextStyle = styled.div`
     transform: scaleY(75%);
   }
 `;
+
+export const SolarStyle = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 16vh;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    color: #171a20;
+
+    > div:nth-of-type(1) {
+      font-size: 44px;
+    }
+
+    > div:nth-of-type(2) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  > div:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 89.5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    width: 264px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: rgba(23, 26, 32, 0.8);
+    color: white;
+  }
+`;
