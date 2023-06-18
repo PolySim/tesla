@@ -1,5 +1,5 @@
 import React from "react";
-import sumList from "./sumList";
+import sumList from "src/function/sumList";
 
 export default function HoverHeader({
   index,

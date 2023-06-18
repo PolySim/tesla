@@ -8,6 +8,7 @@ export const HeaderStyle = styled.header`
   position: fixed;
   z-index: 1000;
   height: 56px;
+  transition: color 0.8s ease-in-out;
   > div {
     display: flex;
     align-items: center;
@@ -38,7 +39,7 @@ export const LogoTesla = styled.svg`
   width: 120px;
   margin-right: 24px;
   margin-left: 32px;
-  color: white;
+  /* color: white; */
 `;
 
 export const HomeStyle = styled.div`
@@ -62,6 +63,7 @@ export const HomeStyle = styled.div`
     top: 16vh;
     left: 50%;
     transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
 
     > div:nth-of-type(1) {
       font-size: 44px;
@@ -81,7 +83,8 @@ export const HomeStyle = styled.div`
     border-radius: 4px;
     padding: 3px 110px;
     cursor: pointer;
-    transition: 2s cubic-bezier(1, 0, 1, 0);
+    transition: background-color 2s cubic-bezier(1, 0, 1, 0),
+      opacity 0.3s ease-in-out;
 
     :hover {
       background-color: white;
@@ -107,8 +110,13 @@ export const CarsStyle = styled.div`
       object-fit: cover;
     }
   }
+`;
 
-  > div:nth-of-type(2) {
+export const CarsTextStyle = styled.div`
+  color: #171a20;
+  transition: opacity 0.3s ease-in-out;
+
+  > div:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +148,7 @@ export const CarsStyle = styled.div`
       transform: scaleY(75%);
     }
   }
-  > div:nth-of-type(3) {
+  > div:nth-of-type(2) {
     display: flex;
     position: absolute;
     left: 50%;
@@ -166,10 +174,26 @@ export const CarsStyle = styled.div`
       color: #393c41;
     }
   }
-  > div:nth-of-type(4) {
+  > div:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 95vh;
     left: 50%;
     transform: translateX(-50%);
+    width: fit-content;
+  }
+  > div:nth-of-type(3)::after {
+    content: "";
+    width: 100%;
+    background-color: #171a20;
+    height: 3px;
+    transform: scaleY(33%);
+    transition: 0.3s ease-in-out;
+    border-radius: 4px;
+  }
+
+  > div:nth-of-type(3):hover::after {
+    transform: scaleY(75%);
   }
 `;
