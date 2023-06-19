@@ -8,17 +8,17 @@ export default function Accessory({
   opacity: number;
 }): JSX.Element {
   return (
-    <SolarStyle>
+    <SolarStyle opacity={opacity}>
       <div>
         <img
           src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Desktop_Accessories"
           alt="Wall Connector"
         />
       </div>
-      <div style={{ opacity: opacity }}>
+      <div>
         <div>Accessoires</div>
       </div>
-      <div style={{ opacity: opacity }}>Commander Maintenant</div>
+      <div>Commander Maintenant</div>
       <Footer />
     </SolarStyle>
   );

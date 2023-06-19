@@ -12,7 +12,7 @@ export default function CarsText({
   const carsInfo = allCarsInfo[pageView - 1];
 
   return (
-    <CarsTextStyle style={{ opacity: pageView === futurePageView ? 1 : 0 }}>
+    <CarsTextStyle opacity={pageView === futurePageView ? 1 : 0}>
       <div>
         <div>{carsInfo?.name}</div>
         {carsInfo?.try ? <div>Réservez votre essai</div> : <></>}

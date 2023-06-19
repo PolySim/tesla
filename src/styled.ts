@@ -18,7 +18,7 @@ export const HeaderStyle = styled.header`
       cursor: pointer;
     }
   }
-  > div:last-child {
+  > div:nth-of-type(3) {
     position: absolute;
     top: 16px;
     left: 0px;
@@ -29,10 +29,18 @@ export const HeaderStyle = styled.header`
     opacity: 0;
   }
   :hover {
-    > div:last-child {
+    > div:nth-of-type(3) {
       opacity: 0.3;
     }
   }
+`;
+
+export const MenuPhone = styled.div`
+  z-index: 10;
+  margin-right: 24px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: rgba(117, 117, 117, 0.3);
 `;
 
 export const LogoTesla = styled.svg`
@@ -97,7 +105,6 @@ export const CarsStyle = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  color: #171a20;
 
   > div:nth-of-type(1) {
     display: flex;
@@ -110,11 +117,21 @@ export const CarsStyle = styled.div`
       object-fit: cover;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    > div:nth-of-type(1) {
+      img {
+        width: 100vw;
+        max-height: 100vh;
+      }
+    }
+  }
 `;
 
-export const CarsTextStyle = styled.div`
+export const CarsTextStyle = styled.div<{ opacity: number }>`
   color: #171a20;
   transition: opacity 0.3s ease-in-out;
+  opacity: ${(props) => props.opacity};
 
   > div:nth-of-type(1) {
     display: flex;
@@ -196,9 +213,26 @@ export const CarsTextStyle = styled.div`
   > div:nth-of-type(3):hover::after {
     transform: scaleY(75%);
   }
+
+  @media screen and (max-width: 768px) {
+    > div:nth-of-type(2) {
+      flex-direction: column;
+      align-items: center;
+      top: 85vh;
+      width: 100%;
+
+      > div {
+        width: 90%;
+      }
+
+      > div:nth-of-type(1) {
+        margin: 0 0 12px 0;
+      }
+    }
+  }
 `;
 
-export const SolarStyle = styled.div`
+export const SolarStyle = styled.div<{ opacity: number }>`
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -213,12 +247,16 @@ export const SolarStyle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     position: absolute;
     top: 16vh;
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.3s ease-in-out;
     color: #171a20;
+    width: 90%;
+    opacity: ${(props) => props.opacity};
 
     > div:nth-of-type(1) {
       font-size: 44px;
@@ -244,6 +282,19 @@ export const SolarStyle = styled.div`
     border-radius: 4px;
     background-color: rgba(23, 26, 32, 0.8);
     color: white;
+    opacity: ${(props) => props.opacity};
+  }
+  @media screen and (max-width: 768px) {
+    > div:nth-of-type(2) {
+      justify-content: center;
+      width: 90%;
+      > div {
+        width: 100%;
+      }
+    }
+    > div:nth-of-type(3) {
+      width: 90%;
+    }
   }
 `;
 
@@ -268,6 +319,18 @@ export const FooterStyle = styled.div`
 
     > div {
       margin-right: 12px;
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    flex-direction: column;
+
+    > div:nth-of-type(1) {
+      padding: 0;
+    }
+
+    > div:nth-of-type(2) {
+      display: none;
     }
   }
 `;
