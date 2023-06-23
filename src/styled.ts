@@ -92,11 +92,17 @@ export const HomeStyle = styled.div`
     padding: 3px 110px;
     cursor: pointer;
     transition: background-color 2s cubic-bezier(1, 0, 1, 0),
-      opacity 0.3s ease-in-out;
+      color 2s cubic-bezier(1, 0, 1, 0), opacity 0.3s ease-in-out;
 
     :hover {
       background-color: white;
       color: black;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    > div:nth-of-type(3) {
+      top: calc(82vh - 40px);
     }
   }
 `;
@@ -218,7 +224,7 @@ export const CarsTextStyle = styled.div<{ opacity: number }>`
     > div:nth-of-type(2) {
       flex-direction: column;
       align-items: center;
-      top: 85vh;
+      top: calc(80vh - 92px);
       width: 100%;
 
       > div {
@@ -228,6 +234,11 @@ export const CarsTextStyle = styled.div<{ opacity: number }>`
       > div:nth-of-type(1) {
         margin: 0 0 12px 0;
       }
+    }
+
+    > div:nth-of-type(3) {
+      width: max-content;
+      top: calc(85vh - 21px);
     }
   }
 `;
@@ -294,6 +305,7 @@ export const SolarStyle = styled.div<{ opacity: number }>`
     }
     > div:nth-of-type(3) {
       width: 90%;
+      top: calc(82vh - 40px);
     }
   }
 `;
@@ -324,6 +336,7 @@ export const FooterStyle = styled.div`
 
   @media screen and (max-width: 1300px) {
     flex-direction: column;
+    top: calc(87vh - 18px);
 
     > div:nth-of-type(1) {
       padding: 0;
